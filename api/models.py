@@ -1,26 +1,18 @@
 import datetime
 from typing import List, Optional
+from database import Base
+from sqlalchemy import Column, Engine, Integer, String, TIMESTAMP, Boolean, text
 from pydantic import BaseModel
+from datetime import datetime
 
+class Post(Base):
+    __tablename__ = "posts"
 
-class User(BaseModel):
-    id: int
-    username: Optional[str] = None
-    email: Optional[str] = None
-    full_name: Optional[str] = None
-
-
-class Product(BaseModel):
-    id: int
-    name: Optional[str] = None
-    description: Optional[str] = None
-    price: Optional[float] = None
-    in_stock: Optional[bool] = None
-
+    id = Column(Integer,primary_key=True,nullable=False)
+    title = Column(String,nullable=False)
+    content = Column(String,nullable=False)
+    published = Column(Boolean, server_default='TRUE')
+    created_at = Column(TIMESTAMP(timezone=True), server_default=text('now()'))
     
-class Order(BaseModel):
-    id: int
-    customer_id: Optional[int] = None
-    products: Optional[List[Product]] = None
-    total_price: Optional[float] = None
-    status: Optional[str] = None
+
+

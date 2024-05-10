@@ -1,13 +1,15 @@
 from fastapi import FastAPI
 import uvicorn
-from api.routes import case_router,order_router,product_router
-
+from api.routes import router
+import api.models
+from database import engine
 app = FastAPI()
 
-app.include_router(case_router)
-app.include_router(order_router)
-app.include_router(product_router)
+api.models.Base.metadata.create_all(bind=engine)
 
+app.include_router(router)
+
+ 
 
 
 
