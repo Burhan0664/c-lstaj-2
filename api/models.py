@@ -1,7 +1,8 @@
 import datetime
 from typing import List, Optional
 from database import Base
-from sqlalchemy import Column, Engine, Integer, String, TIMESTAMP, Boolean, text
+from sqlalchemy import Column, Integer, String, TIMESTAMP, Boolean, text
+from sqlalchemy.engine import Engine
 from pydantic import BaseModel
 from datetime import datetime
 
