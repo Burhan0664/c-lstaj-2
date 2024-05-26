@@ -4,3 +4,5 @@
 2. [Pydantic](https://realpython.com/python-pydantic/)
 3. [FastAPI](https://realpython.com/fastapi-python-web-apis/)
 4. [PostgreSql](https://fastapi.tiangolo.com/tutorial/sql-databases/)
+5. [Alembic](https://fastapi.tiangolo.com/tutorial/sql-databases/](https://alembic.sqlalchemy.org/en/latest/)
+
